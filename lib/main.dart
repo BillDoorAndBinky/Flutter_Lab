@@ -15,15 +15,15 @@ void main() {
     body: Container(
       decoration: const BoxDecoration(
         color: Colors.green,
-        borderRadius: BorderRadius.all(Radius.circular(30)),
       ),
-      width: 300,
-      height: 300,
-      padding: const EdgeInsets.only(left: 30, top: 30),
-      margin: const EdgeInsets.only(left: 30, top: 30),
-      child: const Text(
-        'Text',
-        style: TextStyle(fontSize: 30, color: Colors.greenAccent),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.baseline,
+        children: const <Widget>[
+          Icon(Icons.adjust, size: 30, color: Colors.teal),
+          Icon(Icons.adjust, size: 50, color: Colors.redAccent),
+          Icon(Icons.adjust, size: 30, color: Colors.teal),
+        ],
       ),
     ),
   )));
