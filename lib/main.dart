@@ -12,19 +12,19 @@ void main() {
             shadows: [Shadow(color: Colors.black, blurRadius: 30)]),
       ),
     ),
-    body: Center(
-      child: Column(children: <Widget>[
-        FloatingActionButton(
-          tooltip: 'Click this pls!',
-          onPressed: () {},
-          child: const Icon(Icons.desktop_windows),
-        ),
-        FloatingActionButton(
-          tooltip: 'No click this!',
-          onPressed: () {},
-          child: const Icon(Icons.laptop),
-        ),
-      ]),
+    body: Container(
+      decoration: const BoxDecoration(
+        color: Colors.green,
+        borderRadius: BorderRadius.all(Radius.circular(30)),
+      ),
+      width: 300,
+      height: 300,
+      padding: const EdgeInsets.only(left: 30, top: 30),
+      margin: const EdgeInsets.only(left: 30, top: 30),
+      child: const Text(
+        'Text',
+        style: TextStyle(fontSize: 30, color: Colors.greenAccent),
+      ),
     ),
   )));
 }
