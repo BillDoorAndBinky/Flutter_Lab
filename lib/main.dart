@@ -12,21 +12,11 @@ void main() {
               shadows: [Shadow(color: Colors.black, blurRadius: 30)]),
         ),
       ),
-      body: Container(
-          decoration: const BoxDecoration(
-            color: Colors.green,
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: const <Widget>[
-              Icon(Icons.adjust, size: 150, color: Colors.redAccent),
-              Icon(Icons.adjust, size: 100, color: Colors.amber),
-              Icon(Icons.adjust, size: 50, color: Colors.teal),
-              Positioned(
-                  top: 100,
-                  child: Text('TEST', style: TextStyle(fontSize: 30))),
-            ],
-          )),
+      body: const RotationTransition(
+        turns: AlwaysStoppedAnimation(15 / 360),
+        child:
+            Image(image: AssetImage('assets/images/black_picture.png')),
+      ),
     ),
   ));
 }
