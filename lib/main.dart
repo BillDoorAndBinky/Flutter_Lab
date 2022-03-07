@@ -12,10 +12,22 @@ void main() {
               shadows: [Shadow(color: Colors.black, blurRadius: 30)]),
         ),
       ),
-      body: const RotationTransition(
-        turns: AlwaysStoppedAnimation(15 / 360),
-        child:
-            Image(image: AssetImage('assets/images/black_picture.png')),
+      body: Column(
+        children: const <Widget>[
+          RotationTransition(
+              turns: AlwaysStoppedAnimation(15 / 360),
+              child:
+                  Image(image: AssetImage('assets/images/black_picture.png'))),
+          RotationTransition(
+              turns: AlwaysStoppedAnimation(15 / 360),
+              child: Text(
+                'Malevich',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontFamily: 'DancingScript',
+                    color: Colors.blueAccent),
+              )),
+        ],
       ),
     ),
   ));
