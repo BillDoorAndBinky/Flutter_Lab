@@ -16,9 +16,8 @@ void main() {
       decoration: const BoxDecoration(
         color: Colors.green,
       ),
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.baseline,
         children: const <Widget>[
           Icon(Icons.adjust, size: 30, color: Colors.teal),
           Icon(Icons.adjust, size: 50, color: Colors.redAccent),
