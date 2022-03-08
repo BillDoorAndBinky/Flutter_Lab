@@ -1,11 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_lab/Rotatable.dart';
 
-class Word extends StatelessWidget {
+class Word extends RotatableWidget {
+
+  Word(deg) {
+    this.deg = deg;
+  }
+
   @override
   Widget build(BuildContext context) {
     return RotationTransition(
-        turns: AlwaysStoppedAnimation(15 / 360),
+        turns: AlwaysStoppedAnimation(deg / 360),
         child: Text(
           'Malevich',
           style: TextStyle(

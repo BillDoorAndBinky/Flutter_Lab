@@ -67,10 +67,10 @@ class _MyBodyState extends State<MyBody> {
           "Current Value: $value",
           style: const TextStyle(fontSize: 30),
         ),
-        BlackPicture(),
-        BlackPicture(),
-        BlackPicture(),
-        Word(),
+        BlackPicture(value),
+        BlackPicture(value),
+        BlackPicture(value),
+        Word(value),
       ],
     );
   }
