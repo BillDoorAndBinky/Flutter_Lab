@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lab/Word.dart';
 
 import 'BlackPicture.dart';
 
@@ -33,23 +34,43 @@ class MyAppBar extends AppBar {
   }
 }
 
-class MyBody extends StatelessWidget {
+class MyBody extends StatefulWidget {
+  int value = 0;
+  static const int step = 15;
+
+  @override
+  State<StatefulWidget> createState() {
+    return _MyBodyState();
+  }
+}
+
+class _MyBodyState extends State<MyBody> {
+  int value = 0;
+  static const int step = 15;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        BlackPicture(),
-        BlackPicture(),
-        BlackPicture(),
-        RotationTransition(
-            turns: AlwaysStoppedAnimation(15 / 360),
+        ElevatedButton(
+            onPressed: () {
+              setState(() {
+                value += step;
+                value %= 360;
+              });
+            },
             child: Text(
-              'Malevich',
-              style: TextStyle(
-                  fontSize: 30,
-                  fontFamily: 'DancingScript',
-                  color: Colors.blueAccent),
+              "Click me",
+              style: TextStyle(fontSize: 25),
             )),
+        Text(
+          "Current Value: $value",
+          style: const TextStyle(fontSize: 30),
+        ),
+        BlackPicture(),
+        BlackPicture(),
+        BlackPicture(),
+        Word(),
       ],
     );
   }
