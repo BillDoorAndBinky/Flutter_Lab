@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SensitiveIcon extends StatefulWidget {
+class Speaker extends StatefulWidget {
   bool isActive = false;
 
   @override
   State<StatefulWidget> createState() {
-    return _SensitiveIconState();
+    return _SpeakerState();
   }
 }
 
-class _SensitiveIconState extends State<SensitiveIcon> {
+class _SpeakerState extends State<Speaker> {
   bool isActive = false;
 
   @override

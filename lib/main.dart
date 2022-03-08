@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lab/Word.dart';
-
-import 'BlackPicture.dart';
-import 'SensitiveIcon.dart';
+import 'package:flutter_lab/SpeakerManager.dart';
 
 void main() {
   runApp(MyFirstApp());
@@ -46,32 +43,9 @@ class MyBody extends StatefulWidget {
 }
 
 class _MyBodyState extends State<MyBody> {
-  int value = 0;
-  static const int step = 15;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        ElevatedButton(
-            onPressed: () {
-              setState(() {
-                value += step;
-                value %= 360;
-              });
-            },
-            child: Text(
-              "Click me",
-              style: TextStyle(fontSize: 25),
-            )),
-        Text(
-          "Current Value: $value",
-          style: const TextStyle(fontSize: 30),
-        ),
-        SensitiveIcon()
-      ],
-    );
+    return SpeakerManager();
   }
 }
