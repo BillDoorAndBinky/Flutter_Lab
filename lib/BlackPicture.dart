@@ -13,7 +13,7 @@ class BlackPicture extends RotatableWidget {
         turns: AlwaysStoppedAnimation(deg / 360),
         child: Image(
           image: AssetImage('assets/images/black_picture.png'),
-          width: 100,
+          width: 50,
         ));
   }
 }
