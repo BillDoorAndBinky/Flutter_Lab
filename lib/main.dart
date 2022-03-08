@@ -50,36 +50,34 @@ class _MyBodyState extends State<MyBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        RotationTransition(
-            turns: AlwaysStoppedAnimation(value / 360),
-            child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    value += step;
-                    value %= 360;
-                  });
-                },
-                child: Text(
-                  "Click me",
-                  style: TextStyle(fontSize: 25),
-                ))),
-        Padding(
-            padding: EdgeInsets.all(50.0),
-            child: RotationTransition(
+    return RotationTransition(
+        turns: AlwaysStoppedAnimation(value / 360),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RotationTransition(
+                turns: AlwaysStoppedAnimation(value / 360),
+                child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        value += step;
+                        value %= 360;
+                      });
+                    },
+                    child: Text(
+                      "Click me",
+                      style: TextStyle(fontSize: 25),
+                    ))),
+            RotationTransition(
                 turns: AlwaysStoppedAnimation(value / 360),
                 child: Text(
                   "Current Value: $value",
                   style: const TextStyle(fontSize: 30),
-                ))),
-        BlackPicture(value),
-        BlackPicture(value),
-        BlackPicture(value),
-        Word(value),
-      ],
-    );
+                )),
+            BlackPicture(value),
+            Word(value),
+          ],
+        ));
   }
 }
