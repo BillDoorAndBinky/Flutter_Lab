@@ -64,7 +64,7 @@ class _SpeakerManagerState extends State<SpeakerManager> {
           Expanded(
             child: ListView(
                 shrinkWrap: true,
-                children: speakers), // nested ScrollView
+                children: speakers.map((e) => e).toList()), // nested ScrollView
           ),
         ]);
   }
